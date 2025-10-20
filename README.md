@@ -1,34 +1,44 @@
-# 🏠 Predicting House Prices using Square Footage
+# 🏠 Simple Linear Regression: Predicting Housing Prices from Living Area
 Principles of ML Lifecycle: Data Cleaning and Feature Engineering to Train Linear Regression Model
 El Brewster
 
----
-
 ## Dataset Description
-
-This project uses a housing dataset containing property sale information for King County, Washington. The dataset includes numerical and categorical features such as living area (`sqft_living`), lot size, number of bedrooms and bathrooms, year built, and sale price.
-The target variable in this analysis is `price_per_sqft`, representing the sale price divided by the home’s living area. This metric normalizes prices across different home sizes, making it easier to compare properties.
+This project utilizes a housing dataset containing property sale records from King County, Washington. The dataset includes a range of structural and physical attributes such as living area (`sqft_living`), lot size, number of bedrooms and bathrooms, and final sale price.
+The target variable for this analysis is `price`, representing each property's sale price in U.S. dollars.
 
 ---
 
 ## Data Cleaning and Feature Engineering
 
-- Removed duplicate and missing records to ensure data integrity.
-- Converted relevant features to numeric types and handled outliers where appropriate.
-- Created new features such as `price_per_sqft` for normalized price comparisons.
-- Applied logarithmic transformations to highly skewed variables to improve linearity where relevant.
-- Split the data into training (80%) and testing (20%) subsets for model evaluation.
+To prepare the dataset for modeling, the following preprocessing steps were performed:
+  - Removed missing and duplicate records to ensure data integrity.
+  - Converted relevant attributes to numeric types and addressed potential outliers.
+  - Engineered new features to explore possible predictive relationships, including:
+    - `living_to_lot_ratio` = `sqft_living` / `sqft_lot`
+    - `bath_per_bed` = `bathrooms` / `bedrooms`
+    - `log_sqft_living` = natural logarithm of `sqft_living`, applied to reduce right skewness and improve linearity.
+  - The data was subsequently divided into training (80%) and testing (20%) subsets using a fixed random state for reproducibility.
 
 ---
 
-## Model and Evaluation
+## Model Description and Evaluation
 
-A simple linear regression model was trained using one predictor variable to estimate `price_per_sqft`.
-The model’s performance on the test set was:
-- R²: 0.995
-- RMSE: 29,468.09
+A *simple linear regression model* was developed to predict housing prices using `log_sqft_living` as the sole independent variable.
+The estimated regression equation is expressed as:
 
-These results indicate an excellent model fit, with the regression line explaining approximately 99.5% of the variation in price per square foot and an average prediction error of about $29,500.
+  price^=533,099.06×log⁡(sqft_living)+intercept
+
+Model performance on the test set was evaluated using standard regression metrics:
+  - R²: 0.374
+  - RMSE: $285,482.72
+
+---
+
+## Interpretation
+
+The model explains approximately *37.4% of the variance* in sale prices based solely on the logarithm of living area. While this represents a *moderate linear relationship*, the relatively high *RMSE* indicates that additional predictors—such as property grade, neighborhood location, or view—would be necessary to improve predictive accuracy.
+
+Overall, this analysis demonstrates that *living area* is a significant, though incomplete, determinant of housing price variation within King County.
 
 
 
