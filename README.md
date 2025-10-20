@@ -1,5 +1,6 @@
 # 🏠 Simple Linear Regression: Predicting Housing Prices from Living Area
 Principles of ML Lifecycle: Data Cleaning and Feature Engineering to Train Linear Regression Model
+
 El Brewster
 
 ## Dataset Description
@@ -39,6 +40,7 @@ Model performance on the test set was evaluated using standard regression metric
 The model explains approximately *37.4% of the variance* in sale prices based solely on the logarithm of living area. While this represents a *moderate linear relationship*, the relatively high *RMSE* indicates that additional predictors—such as property grade, neighborhood location, or view—would be necessary to improve predictive accuracy.
 
 Overall, this analysis demonstrates that *living area* is a significant, though incomplete, determinant of housing price variation within King County.
+
 
 
 
