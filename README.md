@@ -27,7 +27,9 @@ A simple linear regression model was trained using one predictor variable to est
 The model’s performance on the test set was:
 - R²: 0.995
 - RMSE: 29,468.09
+
 These results indicate an excellent model fit, with the regression line explaining approximately 99.5% of the variation in price per square foot and an average prediction error of about $29,500.
+
 
 
 
