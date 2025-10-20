@@ -1,5 +1,5 @@
-# 🏠 Simple Linear Regression: Feature Engineering with Housing Data Set
-
+# 🏠 Predicting House Prices using Square Footage
+## Principles of ML Lifecycle: Data Cleaning, Feature Engineering to Train Linear Regression Model
 El Brewster
 
 ---
@@ -28,6 +28,7 @@ The model’s performance on the test set was:
 - R²: 0.995
 - RMSE: 29,468.09
 These results indicate an excellent model fit, with the regression line explaining approximately 99.5% of the variation in price per square foot and an average prediction error of about $29,500.
+
 
 
 
